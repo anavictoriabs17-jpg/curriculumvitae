@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Currículum de Ana Victoria Bazán Sánchez">
+  <title>Currículum | Ana Victoria Bazán Sánchez</title>
+  <style>
+    :root {
+      /* Fondo blanco puro de la columna principal. */
+      --color-fondo-principal: #FFFFFF;
+      /* Gris claro cálido de la barra lateral. */
+      --color-fondo-lateral: #E6E3E1;
+      /* Gris piedra para las barras de título y acentos. */
+      --color-acento: #B7B2AE;
+      /* Gris carbón para títulos y texto principal. */
+      --color-texto-principal: #2C2C2C;
+      /* Gris medio para texto secundario e iconos. */
+      --color-texto-secundario: #555555;
+      /* Gris oscuro para separadores de la barra lateral. */
+      --color-separador: #77716D;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--color-fondo-principal);
+      color: var(--color-texto-principal);
+      font-family: "Montserrat", "Lato", "Open Sans", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .cv {
+      display: grid;
+      grid-template-columns: 35% 65%;
+      max-width: 1100px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: var(--color-fondo-principal);
+      box-shadow: 0 0 28px rgb(44 44 44 / 10%);
+    }
+
+    .sidebar {
+      padding: 38px 30px 42px;
+      background: var(--color-fondo-lateral);
+    }
+
+    .photo-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 0 0 30px;
+    }
+
+    .photo {
+      display: block;
+      width: min(190px, 100%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .main {
+      min-width: 0;
+      padding: 48px 46px 52px;
+    }
+
+    .name {
+      margin: 0;
+      font-size: clamp(2.15rem, 4vw, 3.2rem);
+      font-weight: 750;
+      letter-spacing: -0.045em;
+      line-height: 1.08;
+    }
+
+    .name span {
+      display: block;
+    }
+
+    .role {
+      margin: 12px 0 34px;
+      color: var(--color-texto-secundario);
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.025em;
+    }
+
+    .sidebar-section {
+      padding: 20px 0 21px;
+      border-top: 1px solid var(--color-separador);
+    }
+
+    .sidebar-section:first-of-type {
+      border-top: 0;
+    }
+
+    .sidebar h2,
+    .section-heading {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      font-weight: 750;
+      letter-spacing: 0.11em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .contact-list,
+    .plain-list,
+    .experience-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 20px minmax(0, 1fr);
+      align-items: start;
+      gap: 10px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-item svg {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      fill: none;
+      stroke: var(--color-texto-secundario);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .education-entry + .education-entry {
+      margin-top: 15px;
+    }
+
+    .education-entry h3,
+    .job h3 {
+      margin: 0 0 3px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .education-entry p,
+    .job p {
+      margin: 0;
+      color: var(--color-texto-secundario);
+    }
+
+    .plain-list,
+    .experience-list {
+      display: grid;
+      gap: 6px;
+      padding-left: 18px;
+      list-style: disc;
+    }
+
+    .content-section + .content-section {
+      margin-top: 30px;
+    }
+
+    .section-heading {
+      margin: 0 0 17px;
+      padding: 11px 15px;
+      background: var(--color-acento);
+    }
+
+    .job + .job {
+      margin-top: 24px;
+    }
+
+    .job h3 {
+      font-size: 1.05rem;
+    }
+
+    .job p {
+      margin-bottom: 9px;
+    }
+
+    .experience-list {
+      gap: 5px;
+    }
+
+    @media (max-width: 720px) {
+      .cv {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+      }
+
+      .sidebar {
+        padding: 30px 25px 24px;
+      }
+
+      .photo {
+        width: 155px;
+      }
+
+      .main {
+        padding: 34px 25px 40px;
+      }
+
+      .role {
+        margin-bottom: 27px;
+      }
+
+      .sidebar-section {
+        padding: 17px 0;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      html {
+        font-size: 10pt;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .cv {
+        max-width: none;
+        min-height: 297mm;
+        box-shadow: none;
+      }
+
+      .sidebar {
+        padding: 12mm 8mm;
+      }
+
+      .main {
+        padding: 14mm 12mm;
+      }
+
+      .photo {
+        width: 48mm;
+      }
+
+      .content-section,
+      .sidebar-section,
+      .job,
+      .education-entry {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv">
+    <aside class="sidebar">
+      <figure class="photo-wrap">
+        <img class="photo" src="imagenes/foto.jpg" alt="Fotografía de Ana Victoria Bazán Sánchez">
+      </figure>
+
+      <!-- ===== SECCIÓN: CONTACTO ===== -->
+      <section class="sidebar-section" aria-labelledby="contacto">
+        <h2 id="contacto">Contacto</h2>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16.5v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 10.2 18a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 1.9 3.2 2 2 0 0 1 3.9 1h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7.8 9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.9 2.6Z"/></svg>
+            <a href="tel:618463630">618463630</a>
+          </li>
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="m22 6-10 7L2 6"/></svg>
+            <a href="mailto:anavictoria.bs17@gmail.com">anavictoria.bs17@gmail.com</a>
+          </li>
+          <li class="contact-item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>Jerez de la Frontera, Cádiz</span>
+          </li>
+        </ul>
+      </section>
+      <!-- ===== FIN: CONTACTO ===== -->
+
+      <!-- ===== SECCIÓN: FORMACIÓN ===== -->
+      <section class="sidebar-section" aria-labelledby="formacion">
+        <h2 id="formacion">Formación</h2>
+        <div class="education-entry">
+          <h3>Grado en Trabajo Social</h3>
+          <p>Campus de Jerez, UCA</p>
+          <p>2023-actual</p>
+        </div>
+        <div class="education-entry">
+          <h3>Estudios Obligatorios Secundarios (E.S.O)</h3>
+          <p>I.E.S Coloma</p>
+          <p>2017-2021</p>
+        </div>
+      </section>
+      <!-- ===== FIN: FORMACIÓN ===== -->
+
+      <!-- ===== SECCIÓN: HABILIDADES ===== -->
+      <section class="sidebar-section" aria-labelledby="habilidades">
+        <h2 id="habilidades">Habilidades</h2>
+        <ul class="plain-list">
+          <li>Atención y orientación al cliente</li>
+          <li>Capacidad de adaptación</li>
+          <li>Comunicación efectiva y escucha activa</li>
+          <li>Proactividad e iniciativa</li>
+          <li>Empatía y trato cercano</li>
+          <li>Gestión de situaciones bajo presión</li>
+          <li>Resolución de problemas</li>
+          <li>Actitud positiva y profesional</li>
+          <li>Trabajo en equipo</li>
+          <li>Organización y responsabilidad</li>
+        </ul>
+      </section>
+      <!-- ===== FIN: HABILIDADES ===== -->
+
+      <!-- ===== SECCIÓN: IDIOMAS ===== -->
+      <section class="sidebar-section" aria-labelledby="idiomas">
+        <h2 id="idiomas">Idiomas</h2>
+        <p><strong>Inglés:</strong> Nivel A2 (Buen nivel de comunicación y comprensión oral)</p>
+      </section>
+      <!-- ===== FIN: IDIOMAS ===== -->
+    </aside>
+
+    <main class="main">
+      <header>
+        <h1 class="name"><span>Ana Victoria</span><span>Bazán Sánchez</span></h1>
+        <p class="role">Estudiante</p>
+      </header>
+
+      <!-- ===== SECCIÓN: EXPERIENCIA PROFESIONAL ===== -->
+      <section class="content-section" aria-labelledby="experiencia">
+        <h2 class="section-heading" id="experiencia">Experiencia Profesional</h2>
+        <article class="job">
+          <h3>Atención al público - Circuito de Jerez (Empresa de SECURITAS S.L.)</h3>
+          <ul class="experience-list">
+            <li>Atención directa y orientación a asistentes, ofreciendo un trato cercano, profesional y adaptado a las necesidades de cada persona.</li>
+            <li>Gestión de consultas, dudas e incidencias, proporcionando soluciones rápidas y eficaces.</li>
+            <li>Organización y control de la atención al público en entornos de gran afluencia, manteniendo una actitud resolutiva y profesional.</li>
+            <li>Comunicación y coordinación constante con el equipo para garantizar el correcto desarrollo de la actividad.</li>
+            <li>Adaptación a diferentes situaciones y perfiles de público, demostrando agilidad, responsabilidad y capacidad para trabajar bajo presión.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <h3>Hostelería y graduaciones (STEP)</h3>
+          <ul class="experience-list">
+            <li>Atención directa al cliente, ofreciendo un trato cercano, profesional y orientado a garantizar una experiencia positiva.</li>
+            <li>Gestión de pedidos y servicio, trabajando con agilidad y precisión en momentos de gran volumen de trabajo.</li>
+            <li>Participación en la organización y desarrollo de eventos y celebraciones, especialmente graduaciones, cuidando los detalles y el correcto funcionamiento del servicio.</li>
+            <li>Coordinación constante con el equipo para asegurar una atención fluida y eficiente durante el desarrollo de los eventos.</li>
+            <li>Resolución de incidencias y respuesta rápida ante las necesidades de clientes y asistentes.</li>
+            <li>Organización y mantenimiento del espacio de trabajo, demostrando responsabilidad, iniciativa y atención al detalle.</li>
+            <li>Capacidad para mantener una actitud resolutiva y profesional bajo presión, adaptándome a diferentes ritmos de trabajo y situaciones.</li>
+          </ul>
+        </article>
+      </section>
+      <!-- ===== FIN: EXPERIENCIA PROFESIONAL ===== -->
+
+      <!-- ===== SECCIÓN: INFORMACIÓN ADICIONAL ===== -->
+      <section class="content-section" aria-labelledby="adicional">
+        <h2 class="section-heading" id="adicional">Información Adicional</h2>
+        <ul class="experience-list">
+          <li>Disponibilidad para trabajar fines de semana y festivos, y flexibilidad para trabajar días laborables.</li>
+          <li>Flexibilidad y facilidad para adaptarse a diferentes horarios.</li>
+          <li>Carné de conducir y vehículo propio.</li>
+          <li>Disponibilidad y predisposición para incorporarse a diferentes sectores y puestos de trabajo relacionados con la atención al público, hostelería, servicios y ámbito social.</li>
+        </ul>
+      </section>
+      <!-- ===== FIN: INFORMACIÓN ADICIONAL ===== -->
+    </main>
+  </div>
+</body>
+</html>
